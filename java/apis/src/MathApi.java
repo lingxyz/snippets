@@ -1,9 +1,9 @@
-package apis;
-
+package src;
+import org.junit.Test;
 /**
  * Math类。用于数学计算。
  */
-public class MathTest {
+public class MathApi {
   public static void main(String[] args) {
     /* 求绝对值 */
     Math.abs(-100); // 100
@@ -39,8 +39,11 @@ public class MathTest {
     Math.sin(3.14); // 0.00159
     // ...
 
+  }
 
-
+  @Test
+  public void test() {
+    System.out.println(123);
   }
 
 }
