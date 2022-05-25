@@ -1,5 +1,5 @@
 package src;
-// import org.junit.Test;
+import org.junit.Test;
 /**
  * Math类。用于数学计算。
  */
@@ -41,9 +41,9 @@ public class MathApi {
 
   }
 
-  // @Test
-  // public void test() {
-  //   System.out.println(123);
-  // }
+  @Test
+  public void test() {
+    System.out.println(123);
+  }
 
 }
