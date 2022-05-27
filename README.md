@@ -1,7 +1,2 @@
 # snippets
-code snippets.
-
-## Java
-
-## JavaScript
-- [demo](javascript/demo.js)
+Code snippets. Just [have a try](https://try.zhangling.site/).
