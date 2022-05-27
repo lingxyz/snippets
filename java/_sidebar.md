@@ -1,5 +1,18 @@
 * [Java](java/)
   * [Math](java/math)
+* 类型
+  * 基本类型
+  * 集合容器
+    * Collection
+      * List
+        * ArrayList
+        * LinkedList
+      * Set
+        * [HashSet](java/hashset)
+        * TreeSet
+    * Map
+      * HashMap
+      * HashTable
 * [IO](java/io)
 * [网络](java/net)
 * [并发](java/thread)
