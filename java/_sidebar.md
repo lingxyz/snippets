@@ -1,9 +1,12 @@
-* [Java](java/)
-  * [Math](java/math)
+* 基本语法
+  * 入口函数
+  * 控制语句
+  * 函数
+  * 异常
 * 类型
   * 基本类型
   * 集合容器
-    * Collection
+    * [Collection](java/collection)
       * List
         * ArrayList
         * LinkedList
@@ -13,6 +16,15 @@
     * Map
       * HashMap
       * HashTable
+* 面向对象
+  * 常用类
+    * String
+    * [Math](java/math)
+* 动态与函数式
+  * 反射
+  * 注解
+  * 动态代理
+  * ...
 * [IO](java/io)
 * [网络](java/net)
 * [并发](java/thread)
