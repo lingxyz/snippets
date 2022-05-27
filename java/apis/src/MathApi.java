@@ -5,6 +5,7 @@ import org.junit.Test;
  */
 public class MathApi {
   public static void main(String[] args) {
+    /// [insert]
     /* 求绝对值 */
     Math.abs(-100); // 100
     System.out.println("-100的绝对值：" + Math.abs(-100));
@@ -38,6 +39,7 @@ public class MathApi {
     /* 三角函数 */
     Math.sin(3.14); // 0.00159
     // ...
+    /// [insert]
 
   }
 
