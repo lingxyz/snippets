@@ -53,27 +53,9 @@
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <!-- 换肤 -->
-  <script>
-    const themes = ['vue', 'dark'];
-    const $btn = document.querySelector('a[data-theme]');
-    const $link = document.querySelector('link[rel]')
-    let nextThemeLocal = localStorage.getItem("activeTheme");
-    if (nextThemeLocal != null && nextThemeLocal != "null") changeTheme(nextThemeLocal);
-
-    $btn.onclick = function(e) {
-      changeTheme();
-    };
-
-    function changeTheme(nextThemeParam) {
-      let activeTheme = $btn.attributes['data-theme'].nodeValue;
-      let nextTheme = nextThemeParam || themes[themes.length - 1 - themes.indexOf(activeTheme)];
-      $btn.attributes['data-theme'].nodeValue = nextTheme;
-      localStorage.setItem("activeTheme", nextTheme);
-      let activeCssLinkArray = $link.attributes.href.value.split(activeTheme);
-      let nextCssLink = activeCssLinkArray[0] + nextTheme + activeCssLinkArray[1];
-      $link.attributes.href.value = nextCssLink;
-    }
-  </script>
+  <!-- 自定义插件：文档目录 -->
+  <script src="plugins/docSidebar.js"></script>
+  <!-- 自定义插件：换肤 -->
+  <script src="plugins/switchTheme.js"></script>
 </body>
 </html>
