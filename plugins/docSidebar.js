@@ -2,22 +2,32 @@
  * docsify 自定义插件：文档目录
  * 参考文档：https://docsify.js.org/#/zh-cn/write-a-plugin
  */
- window.$docsify.plugins.push(function(hook, vm) {
-  hook.doneEach(function() {
-    // 解析成 html 后调用。
-    // beforeEach 和 afterEach 支持处理异步逻辑
-    // ...
-    // 异步处理完成后调用 next(html) 返回结果
-    vm.heads = document.querySelectorAll("h2");
-    var sidebar = '';
-    vm.heads.forEach(item => {
-      console.log(item.innerHTML);
-      sidebar += item.innerHTML;
-    });
-    console.log(sidebar)
+(function () {
+  var myPlugin = function (hook, vm) {
+    // // Invoked on each page load after new HTML has been appended to the DOM
+    hook.afterEach(function(html) {
+      console.log(vm.compiler.cacheTOC)
+      console.log(vm.route)
+      const headerTree = vm.compiler.cacheTOC[vm.route.file];
+      let headerTreeHTML = '';
+      headerTree.forEach(item => {
+        if (item.level === 1) return;
+        headerTreeHTML +=
+        `<li>
+          <a class="section-link" href="${item.slug}" title="${item.title}" style="font-weight: normal;text-decoration: none;">${item.title}</a>
+        </li>`;
 
-    // console.log(html.replaceAll(/.*(\<h2\>.*\<\/h2\>).*/g, '$1'));
-    // sidebar = "1111";
-    // next(html+sidebar);
-  });
-})
+      })
+      var docSideBar = [
+          '<ul class="doc-sidebar" style="position: fixed; right: 20px;top: 50%;transform: translateY(-50%);z-index: 1;">',
+          headerTreeHTML,
+          '</ul>',
+        ].join('');
+      return docSideBar + html;
+    });
+  };
+
+  // Add plugin to docsify's plugin array
+  $docsify = $docsify || {};
+  $docsify.plugins = [].concat(myPlugin, $docsify.plugins || []);
+})();
